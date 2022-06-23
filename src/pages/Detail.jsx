@@ -29,8 +29,16 @@ const Detail = () => {
 
   return (
     <Layout>
-      <div className="mx-12 my-8 space-y-8">
-        <div>{data.content}</div>
+      <div>
+        <div className="text-center font-bold text-3xl text-white mt-4">
+          Detail
+        </div>
+        <div
+          className="space-y-8 w-1/2 rounded-2xl m-auto my-11 items-center space-x-6 bg-gradient-to-r from-red-800 via-stone-600 to-orange-300 py-5 px-5 text-white text-center font-thin
+"
+        >
+          <div>{data.content}</div>
+        </div>
       </div>
     </Layout>
   );

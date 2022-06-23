@@ -120,9 +120,12 @@ const Homepages = () => {
   } else {
     return (
       <Layout>
-        <div className="mx-12 my-8 space-y-8">
+        <div className="w-full my-8 space-y-8 flex flex-col">
+          <div className="font-bold text-center text-4xl text-white">
+            My Activity
+          </div>
           <button
-            className="bg-green-600 text-white  active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            className="bg-slate-500 text-white w-1/6 text-center active:bg-slate-800 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none m-auto ease-linear transition-all duration-150"
             type="button"
             onClick={() => setShowAddModal(true)}
           >
@@ -132,22 +135,22 @@ const Homepages = () => {
             return (
               <div
                 key={index}
-                className="rounded-sm items-center space-x-6 bg-stone-600 py-5 px-5"
+                className="w-1/2 rounded-2xl m-auto items-center space-x-6 bg-gradient-to-r from-red-800 via-stone-600 to-orange-300 py-5 px-5 text-white text-center font-thin"
               >
                 <div>{item.content}</div>
                 <div>{item.due && <p>{item.due.date}</p>}</div>
-                <div className="space-x-4">
-                  <button className="bg-green-400 px-4 py-1 rounded-sm text-white mt-3">
+                <div className="space-x-4 text-center">
+                  <button className="bg-green-400 px-4 py-1 rounded-lg font-bold rounded-lg shadow hover:shadow-lg text-white mt-3">
                     <Link to={`/detail/${item.id}`}>Go to detail</Link>
                   </button>
                   <button
-                    className="bg-red-600 px-4 py-1 rounded-sm text-white mt-3"
+                    className="bg-red-600 px-4 py-1 rounded-lg rounded shadow hover:shadow-lg font-bold text-white mt-3"
                     onClick={() => handleRemove(item.id)}
                   >
                     Delete
                   </button>
                   <button
-                    className="bg-yellow-400 px-4 py-1 rounded-sm text-white mt-3"
+                    className="bg-yellow-400 px-4 py-1 rounded-lg rounded shadow hover:shadow-lg font-bold text-white mt-3"
                     onClick={() => handleEdit(item.id)}
                   >
                     Update
